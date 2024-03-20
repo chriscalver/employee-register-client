@@ -93,10 +93,6 @@ export default function EmployeeList() {
         </div>
       </div>
 
-      <div className="col-md-4">
-        <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
-      </div>
-
       <div className="col-md-8" align="center">
         <table>
           <tbody>
@@ -134,6 +130,10 @@ export default function EmployeeList() {
             }
           </tbody>
         </table>
+      </div>
+
+      <div className="col-md-4">
+        <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
       </div>
     </div>
   );
