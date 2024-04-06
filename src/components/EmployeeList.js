@@ -88,7 +88,7 @@ export default function EmployeeList() {
       <div className="col-md-12">
         <div className="jumbotron jumbotron-fluid py-4">
           <div className="container text-center">
-            <h1 className="display-4">The Meat Blog</h1>
+            <h1 className="display-4">The Hot-Meat Blog</h1>
           </div>
         </div>
       </div>

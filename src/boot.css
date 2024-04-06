@@ -376,7 +376,7 @@ h6 {
   line-height: 1.2;
 }
 .display-4 {
-  font-size: 3.5rem;
+  font-size: 3.0rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -4532,12 +4532,20 @@ input[type="submit"].btn-block {
   border-radius: calc(0.25rem - 1px);
 }
 .card-img,
-.card-img-bottom,
-.card-img-top {
+.card-img-bottom {
   -ms-flex-negative: 0;
+  padding: 0px 0px 0px 0px;
   flex-shrink: 0;
   width: 100%;
 }
+.card-img-top2 {
+  -ms-flex-negative: 0;
+  padding: 0px 0px 0px 80px;
+  flex-shrink: 0;
+  width: 85%;
+}
+
+
 .card-img,
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);

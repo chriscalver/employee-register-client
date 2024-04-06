@@ -83,11 +83,11 @@ export default function Employee(props) {
   return (
     <>
       <div className="container text-center">
-        <p className="lead">Add/Edit Blog Entry</p>
+        <p className="lead">Add/Edit Blog Entry Below</p>
       </div>
       <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
         <div className="card">
-          <img src={values.imageSrc} className="card-img-top" />
+          <img src={values.imageSrc} className="card-img-top2" />
           <div className="card-body">
             <div className="form-group">
               <input
@@ -101,7 +101,7 @@ export default function Employee(props) {
             <div className="form-group">
               <input
                 className={"form-control" + applyErrorClass("employeeName")}
-                placeholder="Employee Name"
+                placeholder="Restaurant Name"
                 name="employeeName"
                 value={values.employeeName}
                 onChange={handleInputChange}
@@ -110,7 +110,7 @@ export default function Employee(props) {
             <div className="form-group">
               <input
                 className="form-control"
-                placeholder="Occupation"
+                placeholder="Enter your Order"
                 name="occupation"
                 value={values.occupation}
                 onChange={handleInputChange}
