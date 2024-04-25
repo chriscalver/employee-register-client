@@ -93,7 +93,7 @@ export default function EmployeeList() {
         </div>
       </div>
 
-      <div className="col-md-8" align="center">
+      <div className="col-md-6" align="center">
         <table>
           <tbody>
             {
