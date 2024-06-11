@@ -12,21 +12,27 @@ export default function Stars({ count, defaultRating, icon, color, iconSize }) {
   const [temporaryRating, setTemporaryRating] = useState(0);
 
   useEffect(() => {
-    if (defaultRating === localStorage.getItem("starRating")) setRating(2);
+    if (defaultRating === 0) {
+      // setRating(localStorage.getItem("starRating"));
+      console.log("yes");
+    } else {
+      console.log("no");
+     setRating(defaultRating);
+
+      // setRating(0);
+    }
+
     //localStorage.setItem("starRating", 0);
 
    // console.log(rating);
   }, [defaultRating]);
-
-
-
 
   let stars = Array(count || DEFAULT_COUNT).fill(icon || DEFAULT_ICON);
 
   const handleClick = (rating) => {
     // sets clicked value to local storage
     //localStorage.setItem("starRatingTemp", rating);
-    console.log("temp Star rating " + localStorage.getItem("starRatingTemp"));
+  //  console.log("temp Star rating " + localStorage.getItem("starRatingTemp"));
     //setRating(rating);
     
   };

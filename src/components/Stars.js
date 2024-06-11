@@ -13,7 +13,14 @@ export default function Stars({ count, defaultRating, icon, color, iconSize }) {
 
 
   useEffect(() => {
-    if (defaultRating !== 0) setRating(localStorage.getItem("starRating"));
+    if (defaultRating !== 0) {
+      setRating(localStorage.getItem("starRating"));
+
+    } else {
+
+      setRating(0);
+    }
+
     //localStorage.setItem("starRating", 0);
 
    // console.log(rating);

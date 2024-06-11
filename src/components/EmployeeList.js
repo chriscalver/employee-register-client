@@ -46,12 +46,7 @@ export default function EmployeeList() {
           refreshEmployeeList();
         })
         .catch((err) => console.log(err));
-    else console.log("id " + formData.get("employeeID"));
-    console.log("name " + formData.get("employeeName"));
-    console.log("occupation " + formData.get("occupation"));
-    console.log("imageName " + formData.get("imageName"));
-    console.log("comment " + formData.get("comment"));
-    console.log("rating " + formData.get("rating"));
+    
 
     employeeAPI()
       .update(formData.get("employeeID"), formData)
@@ -84,7 +79,7 @@ export default function EmployeeList() {
          //setRating(data.rating);
         //console.log("From Emplist" + data.rating);
         localStorage.setItem("starRating", data.rating);
-        console.log("Original Rating " + localStorage.getItem("starRating"));
+        // console.log("Original Rating " + localStorage.getItem("starRating"));
       }}
     >
 

@@ -85,6 +85,7 @@ export default function Employee(props) {
       formData.append("imageFile", values.imageFile);
       addOrEdit(formData, resetForm);
           // localStorage.setItem("starRating", 0);
+           setValues(initialFieldValues);
 
     }
   };
