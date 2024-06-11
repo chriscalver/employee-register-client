@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from "react";
+import Stars from "./Stars";
 
 const defaultImageSrc = "/img/image_placeholder.png";
+
+// let defaultRating = "3";
 
 const initialFieldValues = {
   employeeID: 0,
   employeeName: "",
   occupation: "",
+  comment: "",
+  rating: 0,
   imageName: "",
   imageSrc: defaultImageSrc,
   imageFile: null,
 };
-
+ // {console.log("From Emp Default" + initialFieldValues.rating)} 
 export default function Employee(props) {
-  const { addOrEdit, recordForEdit } = props;
 
+  const { addOrEdit, recordForEdit } = props;
   const [values, setValues] = useState(initialFieldValues);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (recordForEdit != null) setValues(recordForEdit);
+   
+    if (recordForEdit != null) setValues(recordForEdit);    
+    
+    // console.log(recordForEdit);
   }, [recordForEdit]);
 
   const handleInputChange = (e) => {
@@ -52,10 +60,10 @@ export default function Employee(props) {
 
   const validate = () => {
     let temp = {};
-    temp.employeeName = values.employeeName == "" ? false : true;
-    temp.imageSrc = values.imageSrc == defaultImageSrc ? false : true;
+    temp.employeeName = values.employeeName === "" ? false : true;
+    temp.imageSrc = values.imageSrc === defaultImageSrc ? false : true;
     setErrors(temp);
-    return Object.values(temp).every((x) => x == true);
+    return Object.values(temp).every((x) => x === true);
   };
 
   const resetForm = () => {
@@ -70,25 +78,39 @@ export default function Employee(props) {
       const formData = new FormData();
       formData.append("employeeID", values.employeeID);
       formData.append("employeeName", values.employeeName);
+      formData.append("comment", values.comment);
       formData.append("occupation", values.occupation);
+      formData.append("rating", localStorage.getItem("starRatingTemp"));
       formData.append("imageName", values.imageName);
       formData.append("imageFile", values.imageFile);
       addOrEdit(formData, resetForm);
+          // localStorage.setItem("starRating", 0);
+
     }
   };
 
   const applyErrorClass = (field) =>
-    field in errors && errors[field] == false ? " invalid-field" : "";
-
+    field in errors && errors[field] === false ? " invalid-field" : "";
+ 
   return (
     <>
       <div className="container text-center">
         <p className="lead">Add/Edit Blog Below</p>
+        
       </div>
+
       <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
         <div className="card">
-          <img src={values.imageSrc} className="card-img-top2" />
+          <img src={values.imageSrc} alt="" className="card-img-top2" />
           <div className="card-body">
+            <div className="mycontainer">
+              <div>
+                  {/* {console.log("From Emp" + values.rating)}  */}
+                <Stars iconSize={35} defaultRating={values.rating} />
+              </div>
+              <div className="mycontainer2">Rate your meal</div>
+            </div>
+
             <div className="form-group">
               <input
                 type="file"
@@ -110,15 +132,33 @@ export default function Employee(props) {
             <div className="form-group">
               <input
                 className="form-control"
-                placeholder="Enter your Order"
+                placeholder="What did you have?"
                 name="occupation"
                 value={values.occupation}
                 onChange={handleInputChange}
               />
             </div>
+            <div className="form-group">
+              <textarea
+                className="form-control"
+                placeholder="Describe your experience..."
+                name="comment"
+                value={values.comment}
+                onChange={handleInputChange}
+                rows={7}
+              />
+            </div>
+
             <div className="form-group text-center">
               <button type="submit" className="btn btn-light">
                 Submit
+              </button>
+              <button
+                type="submit"
+                className="btn btn-light"
+                onClick={resetForm}
+              >
+                Cancel
               </button>
             </div>
           </div>

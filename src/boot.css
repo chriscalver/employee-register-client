@@ -75,6 +75,30 @@ body {
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
+
+
+div.mycontainer {
+  width:100%;
+  display: flex;
+  line-height: 50px;
+  margin-bottom: 5px;
+}
+div.mycontainer2 {
+  width:100%;
+  display: flex;
+  line-height: 50px;
+  margin-top: 7px;
+  margin-left: 0px;
+}
+div.mycontainer div {
+  width:50%;  
+  float:left;
+  
+  
+}
+
+
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -4477,7 +4501,7 @@ input[type="submit"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 .card-title {
   margin-bottom: 0.75rem;
