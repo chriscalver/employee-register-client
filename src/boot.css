@@ -82,16 +82,28 @@ div.mycontainer {
   display: flex;
   line-height: 50px;
   margin-bottom: 5px;
+  margin-top: -46px;
+  margin-left: 153px;
+
+
 }
 div.mycontainer2 {
   width:100%;
   display: flex;
   line-height: 50px;
-  margin-top: 7px;
+  margin-top: -33px;
   margin-left: 0px;
+  padding-left: 0px;
 }
+div.mycontainer3 {
+ 
+  margin-top: 23px;
+  margin-left: 0px;
+  padding-left: 5px;
+}
+
 div.mycontainer div {
-  width:50%;  
+  width:100%;  
   float:left;
   
   
@@ -382,7 +394,7 @@ h6 {
 }
 .lead {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 .display-1 {
   font-size: 6rem;
@@ -400,7 +412,7 @@ h6 {
   line-height: 1.2;
 }
 .display-4 {
-  font-size: 3.0rem;
+  font-size: 2.0rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -519,23 +531,24 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 576px) {
+@media (min-width: 330px) {
   .container,
   .container-sm {
-    max-width: 400px;
+    max-width: 310px;
   }
 }
+
 @media (min-width: 576px) {
   .container,
   .container-sm {
-    max-width: 400px;
+    max-width: 315px;
   }
 }
 @media (min-width: 768px) {
   .container,
   .container-md,
   .container-sm {
-    max-width: 768px;
+    max-width: 658px;
   }
 }
 @media (min-width: 992px) {
@@ -543,7 +556,7 @@ pre code {
   .container-lg,
   .container-md,
   .container-sm {
-    max-width: 960px;
+    max-width: 992px;
   }
 }
 @media (min-width: 1200px) {
@@ -552,7 +565,7 @@ pre code {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1140px;
+    max-width: 1190px;
   }
 }
 .row {
@@ -562,6 +575,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  text-align: center;
 }
 .no-gutters {
   margin-right: 0;
@@ -1104,9 +1118,11 @@ pre code {
     max-width: 25%;
   }
   .col-md-4 {
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+    
+
   }
   .col-md-5 {
     -ms-flex: 0 0 41.666667%;
@@ -1114,9 +1130,9 @@ pre code {
     max-width: 41.666667%;
   }
   .col-md-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
   }
   .col-md-7 {
     -ms-flex: 0 0 58.333333%;
@@ -4474,6 +4490,7 @@ input[type="submit"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-bottom: 20px;
 }
 .card > hr {
   margin-right: 0;
@@ -4564,9 +4581,11 @@ input[type="submit"].btn-block {
 }
 .card-img-top2 {
   -ms-flex-negative: 0;
-  padding: 0px 0px 0px 80px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 30px 40px;
+
   flex-shrink: 0;
-  width: 85%;
+  width: 50%;
 }
 
 
@@ -5682,7 +5701,7 @@ a.close.disabled {
 }
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
+    max-width: 300px;
     margin: 1.75rem auto;
   }
   .modal-dialog-scrollable {
@@ -6401,7 +6420,7 @@ button.bg-dark:hover {
   border-radius: 0.3rem !important;
 }
 .rounded-circle {
-  border-radius: 50% !important;
+  border-radius: 20% !important;
 }
 .rounded-pill {
   border-radius: 50rem !important;

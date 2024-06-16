@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Employee from "./Employee";
 import axios from "axios";
 import Stars from "./Stars2";
+const defaultImageSrc = "/img/placeholder.png";
 
 //  const defaultImageSrc = "/img/image_placeholder.png";
 
@@ -107,13 +108,24 @@ export default function EmployeeList() {
     <div className="row">
       <div className="col-md-12">
         <div className="jumbotron jumbotron-fluid py-4">
+          
           <div className="container text-center">
-            <h1 className="display-4">The Hot-Meat Blog</h1>
+          <img src={defaultImageSrc} width="180" alt="" className="card-img-top rounded-circle" />
+          </div>
+          <div className="container text-center">
+            <h1 className="display-4">The Diner Blog</h1>
           </div>
         </div>
       </div>
 
+
+      <div className="col-md-4">
+        <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
+      </div>
+
+
       <div className="col-md-6" align="center">
+      <p className="lead">Current Entries</p>
         <table>
           <tbody>
             {             
@@ -130,9 +142,7 @@ export default function EmployeeList() {
         </table>
       </div>
 
-      <div className="col-md-4">
-        <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
-      </div>
-    </div>
+      </div> 
+   
   );
 }

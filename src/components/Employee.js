@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Stars from "./Stars";
 
-const defaultImageSrc = "/img/image_placeholder.png";
+const defaultImageSrc = "/img/placeholder2.png";
 
 // let defaultRating = "3";
 
@@ -15,17 +15,15 @@ const initialFieldValues = {
   imageSrc: defaultImageSrc,
   imageFile: null,
 };
- // {console.log("From Emp Default" + initialFieldValues.rating)} 
+// {console.log("From Emp Default" + initialFieldValues.rating)}
 export default function Employee(props) {
-
   const { addOrEdit, recordForEdit } = props;
   const [values, setValues] = useState(initialFieldValues);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-   
-    if (recordForEdit != null) setValues(recordForEdit);    
-    
+    if (recordForEdit != null) setValues(recordForEdit);
+
     // console.log(recordForEdit);
   }, [recordForEdit]);
 
@@ -84,32 +82,35 @@ export default function Employee(props) {
       formData.append("imageName", values.imageName);
       formData.append("imageFile", values.imageFile);
       addOrEdit(formData, resetForm);
-          // localStorage.setItem("starRating", 0);
-           setValues(initialFieldValues);
-
+      // localStorage.setItem("starRating", 0);
+      setValues(initialFieldValues);
     }
   };
 
   const applyErrorClass = (field) =>
     field in errors && errors[field] === false ? " invalid-field" : "";
- 
+
   return (
     <>
       <div className="container text-center">
         <p className="lead">Add/Edit Blog Below</p>
-        
       </div>
 
       <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
+        
         <div className="card">
-          <img src={values.imageSrc} alt="" className="card-img-top2" />
+          
           <div className="card-body">
-            <div className="mycontainer">
-              <div>
-                  {/* {console.log("From Emp" + values.rating)}  */}
-                <Stars iconSize={35} defaultRating={values.rating} />
+            
+            <div className="">
+            <img src={values.imageSrc} alt="" width="120" className="card-img-top2 rounded-circle"
+        />
+              <div className="mycontainer2">               
+                
+                <div className="mycontainer3"><Stars iconSize={35} defaultRating={values.rating} /></div>
+                <div className="mycontainer3">Rate</div>
               </div>
-              <div className="mycontainer2">Rate your meal</div>
+             
             </div>
 
             <div className="form-group">
