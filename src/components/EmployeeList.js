@@ -119,13 +119,13 @@ export default function EmployeeList() {
       </div>
 
 
-      <div className="col-md-4">
+      <div className="col-md-4" align="left">
         <Employee addOrEdit={addOrEdit} recordForEdit={recordForEdit} />
       </div>
 
 
-      <div className="col-md-6" align="center">
-      <p className="lead">Current Entries</p>
+      <div className="col-md-3" align="center">
+      <p className="lead" align="center">Current Entries</p>
         <table>
           <tbody>
             {             

@@ -94,7 +94,7 @@ export default function Employee(props) {
     <>
       <div className="container text-center">
         <p className="lead">Add/Edit Blog Below</p>
-      </div>
+      
 
       <form autoComplete="off" noValidate onSubmit={handleFormSubmit}>
         
@@ -166,6 +166,7 @@ export default function Employee(props) {
           </div>
         </div>
       </form>
+      </div>
     </>
   );
 }

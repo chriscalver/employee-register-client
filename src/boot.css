@@ -544,11 +544,15 @@ pre code {
     max-width: 315px;
   }
 }
+
 @media (min-width: 768px) {
   .container,
   .container-md,
   .container-sm {
-    max-width: 658px;
+    max-width: 830px;    
+  }
+  .col-md-4 {
+    margin-left: 100px;
   }
 }
 @media (min-width: 992px) {
@@ -566,6 +570,9 @@ pre code {
   .container-sm,
   .container-xl {
     max-width: 1190px;
+  }
+  .col-md-4 {
+    margin-left: 160px;
   }
 }
 .row {
@@ -620,7 +627,8 @@ pre code {
 .col-md-11,
 .col-md-12,
 .col-md-2,
-.col-md-3,
+.col-md-3
+
 .col-md-4,
 .col-md-5,
 .col-md-6,
@@ -668,6 +676,7 @@ pre code {
   flex-grow: 1;
   max-width: 100%;
 }
+
 .row-cols-1 > * {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -4582,7 +4591,7 @@ input[type="submit"].btn-block {
 .card-img-top2 {
   -ms-flex-negative: 0;
   padding: 0px 0px 0px 0px;
-  margin: 0px 0px 30px 40px;
+  margin: 0px 0px 20px 0px;
 
   flex-shrink: 0;
   width: 50%;
